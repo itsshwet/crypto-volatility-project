@@ -7,7 +7,11 @@ import matplotlib.pyplot as plt
 # -----------------------------
 # 1️⃣ Load the trained model
 # -----------------------------
-model = joblib.load('../models/rf_vol_model.joblib')
+import os
+import joblib
+
+model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'rf_vol_model.joblib')
+model = joblib.load(model_path)
 
 st.set_page_config(page_title="Crypto Volatility Predictor", layout="wide")
 st.title("💹 Crypto Volatility Prediction App")
